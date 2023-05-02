@@ -29,7 +29,8 @@ def decideMove(): #Has the user decide a coordinate to move to
 name = input("What is your name?: ")
 user = player.Player(name)
 parameters = selectDifficulty()
-playingBoard = board.Board(parameters[0], parameters[1], parameters[2]) # Make board with given parameters
+# Make board with given parameters
+playingBoard = board.Board(parameters[0], parameters[1], parameters[2]) 
 startingPos = decideMove()
 
 def printBoard(): # Prints the board, unrevealed spaces are ' '

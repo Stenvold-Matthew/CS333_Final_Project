@@ -111,7 +111,7 @@ class TestForIntegrationBetweenPlayerAndBoard(unittest.TestCase):
         pos = object2.convMouseCoors(5, 70, 10, 10)
         self.assertTrue(object.checkValid(pos[0], pos[1]))
         pos2 = object2.convMouseCoors(630, 70, 10, 10)
-        self.assertFalse(object.checkValid(pos[0], pos[1]))
+        self.assertFalse(object.checkValid(pos2[0], pos2[1]))
 
 
    
