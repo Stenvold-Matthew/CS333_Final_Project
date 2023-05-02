@@ -36,7 +36,7 @@ startingPos = decideMove()
 def printBoard(): # Prints the board, unrevealed spaces are ' '
     for i in range(0, playingBoard.width):
         for j in range(0, playingBoard.height):
-            if not ((playingBoard.getSpot(i, j) == 0) or playingBoard.getSpot(i, j) == 1):
+            if (playingBoard.getSpot(i, j) > 2):
                 print(playingBoard.getSpot(i, j) - 0, end ="|")
             else:
                 print(" ", end ="|")
