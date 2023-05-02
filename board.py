@@ -6,8 +6,12 @@ class Board:
     def __init__(self, width, height, numMines):
         self.spots = [[0 for i in range(width)] for j in range(height)]
         self.numMines = numMines
+        print(self.getSpot(1, 1))
         self.height = height
         self.width = width
+
+    def getSpot(self, x, y):
+        return self.spots[x][y]
 
     def createBoard(self, startingX, startingY):
         minesPlaced = 0
@@ -39,8 +43,7 @@ class Board:
     
     def makeMove(self, x, y):
         if self.checkValid(x, y):
-            print (self.spots[x][y])
-            value = self.spots[x][y]
+            value = self.getSpot(x, y)
             if (value == 0):
                 value = self.checkAdjacent(x, y) + 2
                 self.spots = value
@@ -48,11 +51,11 @@ class Board:
                     for i in range(x-1, x+1):
                         for j in range(y-1, y+1):
                             break
-                            #self.makeMove(i, j)
+                            self.makeMove(i, j)
             return value
         
     def revealBoard(self):
         for i in range(0, self.width):
             for j in range(0, self.height):
-                if (self.spots[i][j] == 0):
+                if (self.getSpot(i, j) == 0):
                     self.makeMove(i, j)

@@ -11,6 +11,6 @@ class Player:
         return endTime - self.startTime
     
     def getPositions(self, x, y):
-        positions = [x][y]  #If I had more time this would convert 
+        positions = [x, y]  #If I had more time this would convert 
                             #mouse positions to coordinates
         return positions

@@ -62,7 +62,7 @@ class TestPlayerObjectForSucessfulCreation(unittest.TestCase):
         object = player.Player("test")
         positions = object.getPositions(0, 1)
         self.assertEqual(positions[0], 0)
-        self.assertEqual(positions[1], 0)
+        self.assertEqual(positions[1], 1)
 
 class TestForIntegrationBetweenPlayerAndBoard(unittest.TestCase):
     def test_checkValidInt(self):
