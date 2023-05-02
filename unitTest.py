@@ -103,7 +103,7 @@ class TestForIntegrationBetweenPlayerAndBoard(unittest.TestCase):
         object.createBoard(pos[0], pos[1])
         for i in range(0, 2):
             for j in range(0, 2):
-                self.assertNotEqual(object.spots[i][j], 1)
+                self.assertNotEqual(object.getSpot(i, j), 1)
 
     def test_mouseValidConv(self):
         object = board.Board(10, 10, 20)
@@ -112,13 +112,6 @@ class TestForIntegrationBetweenPlayerAndBoard(unittest.TestCase):
         self.assertTrue(object.checkValid(pos[0], pos[1]))
         pos2 = object2.convMouseCoors(630, 70, 10, 10)
         self.assertFalse(object.checkValid(pos2[0], pos2[1]))
-
-
-   
-
-
-    
-
 
 if __name__ == '__main__':
     unittest.main()
