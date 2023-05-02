@@ -5,7 +5,9 @@ import board
 
 def selectDifficulty():
     print("What difficulty would you like to choose?")
-    difChoice = int(input("1. Easy (9x9, 10)| 2. Intermediate (16x16, 40)| 3. Expert (24x24, 99): "))
+    message = "1. Easy (9x9, 10)| 2. Intermediate (16x16, 40)| "
+    message += "3. Expert (24x24, 99): "
+    difChoice = int(input(message))
     difficultyParameters = [0, 0, 0]
     if (difChoice == 1):
         difficultyParameters = [9, 9, 10]
