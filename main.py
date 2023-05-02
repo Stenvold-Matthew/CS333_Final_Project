@@ -25,13 +25,16 @@ def decideMove(): #Has the user decide a coordinate to move to
     return moveCoors
 
 def printBoard(inputBoard, filler): # Prints the board, unrevealed spaces are ' '
-    for i in range(0, inputBoard.width):
-        for j in range(0, inputBoard.height):
-            if (inputBoard.getSpot(i, j) > 2):
-                print(inputBoard.getSpot(i, j) - 2, end ="|")
+    seperator = "---"
+    for k in range(1, inputBoard.width):
+        seperator += "----"
+    for j in range(0, inputBoard.width):
+        for i in range(0, inputBoard.height):
+            if (inputBoard.getSpot(i, j) >= 2):
+                print(inputBoard.getSpot(i, j) - 2, end =" | ")
             else:
-                print(filler, end ="|")
-        print("\n------------------")
+                print(filler, end =" | ")
+        print("\n" + seperator)
 
 name = input("What is your name?: ")
 user = player.Player(name)
@@ -41,7 +44,6 @@ playingBoard = board.Board(parameters[0], parameters[1], parameters[2])
 startingPos = decideMove()
 
 playingBoard.createBoard(startingPos[0], startingPos[1])
-playingBoard.makeMove(startingPos[0], startingPos[1])
 numSpacesCleared = 0
 
 stillPlaying = True
@@ -59,13 +61,13 @@ while(stillPlaying):
         adjMines = str(playingBoard.spots[pos[0]][pos[1]]-2)
         print("The number of adjacent mines is " + adjMines)
         numSpacesCleared += 1
-    if(numSpacesCleared == 10):
+    if(playingBoard.checkWin()):
         print("Congrats, you've won")
         stillPlaying = False
 
 printBoard(playingBoard, '*')
 totalTime = user.getTotalTime()
-print(user.name + " got " + str(numSpacesCleared) + " cleared in", end=" ")
-print(str(totalTime) + "seconds")
+print(user.name + " got " + str(playingBoard.spotsRevealed) + " cleared in", end=" ")
+print(str(round(totalTime, 4)) + " seconds")
 
 

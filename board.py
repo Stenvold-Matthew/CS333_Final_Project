@@ -8,6 +8,8 @@ class Board:
         self.numMines = numMines
         self.height = height
         self.width = width
+        self.spotsRevealed = 0
+        self.gameOver = False
 
     def getSpot(self, x, y):
         return self.spots[x][y]
@@ -43,20 +45,32 @@ class Board:
     
     def makeMove(self, x, y):
         if self.checkValid(x, y):
+            if not self.gameOver and self.spots[x][y] == 0:
+                self.spotsRevealed += 1
             value = self.getSpot(x, y)
             if (value == 0):
                 value = self.checkAdjacent(x, y) + 2
                 self.spots[x][y] = value
                 if (value == 2):
-                    for i in range(x-1, x+1):
-                        for j in range(y-1, y+1):
+                    for i in range(x-1, x+2):
+                        for j in range(y-1, y+2):
                             self.makeMove(i, j)
             return value
         else:
             return -1
         
     def revealBoard(self):
+        self.gameOver = True
         for i in range(0, self.width):
             for j in range(0, self.height):
                 if (self.getSpot(i, j) == 0):
                     self.makeMove(i, j)
+
+    def checkWin(self): #If the board is fully cleared, return true
+        totalNumberOfSafeSpots = self.width * self.height
+        totalNumberOfSafeSpots -= self.numMines
+
+        if(self.spotsRevealed == totalNumberOfSafeSpots):
+            return True
+        else:
+            return False

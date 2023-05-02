@@ -47,6 +47,17 @@ class TestBoardObjectForSucessfulCreation(unittest.TestCase):
             for j in range(3):
                 self.assertNotEqual(object.spots[i][j], 0)
 
+    def test_checkWin(self):
+        object = board.Board(2, 2, 2)
+        object.spots[0][0] = 1
+        object.spots[0][1] = 1
+        #Returns false when there are uncleared safe spots
+        self.assertFalse(object.checkWin()) 
+        object.makeMove(1,1)
+        object.makeMove(1,0)
+        #Returns true when there are no uncleared safe spots
+        self.assertTrue(object.checkWin())
+
 class TestPlayerObjectForSucessfulCreation(unittest.TestCase):
     def test_playerInit(self):
         object = player.Player("test")
