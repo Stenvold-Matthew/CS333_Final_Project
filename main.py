@@ -4,8 +4,8 @@
 import board
 
 def selectDifficulty():
-    print()
-    difChoice = int(input("What difficulty would you like to choose? 1. Easy (9x9, 10)| 2. Intermediate (16x16, 40)| 3. Expert (24x24, 99): "))
+    print("What difficulty would you like to choose?")
+    difChoice = int(input("1. Easy (9x9, 10)| 2. Intermediate (16x16, 40)| 3. Expert (24x24, 99): "))
     difficultyParameters = [0, 0, 0]
     if (difChoice == 1):
         difficultyParameters = [9, 9, 10]
@@ -46,7 +46,8 @@ while(stillPlaying):
         print("Game Over")
         playingBoard.revealBoard()
     else:
-        print("The number of adjacent mines is " + str(playingBoard.spots[pos[0], pos[1]]-2))
+        adjMines = str(playingBoard.spots[pos[0], pos[1]]-2)
+        print("The number of adjacent mines is " + adjMines)
 
 
 

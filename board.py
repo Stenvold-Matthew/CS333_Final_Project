@@ -5,7 +5,6 @@ class Board:
 
     def __init__(self, width, height, numMines):
         self.spots = [[0 for i in range(width)] for j in range(height)]
-        print(self.spots[5][5])
         self.numMines = numMines
         self.height = height
         self.width = width
