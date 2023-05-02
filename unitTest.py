@@ -64,6 +64,13 @@ class TestPlayerObjectForSucessfulCreation(unittest.TestCase):
         self.assertEqual(positions[0], 0)
         self.assertEqual(positions[1], 1)
 
+    
+    def test_mouseConv(self):
+        object = player.Player("test")
+        positions = object.getPositions(0, 1)
+        positionsComp = object.convMouseCoors(5, 70, 10, 10)
+        self.assertEqual(positions, positionsComp)
+
 class TestForIntegrationBetweenPlayerAndBoard(unittest.TestCase):
     def test_checkValidInt(self):
         object = board.Board(9, 9, 10)
@@ -97,6 +104,18 @@ class TestForIntegrationBetweenPlayerAndBoard(unittest.TestCase):
         for i in range(0, 2):
             for j in range(0, 2):
                 self.assertNotEqual(object.spots[i][j], 1)
+
+    def test_mouseValidConv(self):
+        object = board.Board(10, 10, 20)
+        object2 = player.Player("test")
+        pos = object2.convMouseCoors(5, 70, 10, 10)
+        self.assertTrue(object.checkValid(pos[0], pos[1]))
+        pos2 = object2.convMouseCoors(630, 70, 10, 10)
+        self.assertFalse(object.checkValid(pos[0], pos[1]))
+
+
+   
+
 
     
 
