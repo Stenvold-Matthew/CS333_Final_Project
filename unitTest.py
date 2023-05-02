@@ -63,7 +63,6 @@ class TestPlayerObjectForSucessfulCreation(unittest.TestCase):
         positions = object.getPositions(0, 1)
         self.assertEqual(positions[0], 0)
         self.assertEqual(positions[1], 1)
-
     
     def test_mouseConv(self):
         object = player.Player("test")
