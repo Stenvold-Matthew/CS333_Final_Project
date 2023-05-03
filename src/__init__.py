@@ -68,8 +68,8 @@ def main():
 
     printBoard(playingBoard, '*')
     totalTime = user.getTotalTime()
-    print(user.name + " got " + str(playingBoard.spotsRevealed) + " cleared in", end=" ")
-    print(str(round(totalTime, 4)) + " seconds")
+    print(user.name + " got " + str(playingBoard.spotsRevealed), end=" ")
+    print("cleared in " + str(round(totalTime, 4)) + " seconds")
 
 if __name__ == '__main__':
     main()
