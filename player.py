@@ -20,9 +20,7 @@ class Player:
         xgrid = area / xSpots
         ygrid = area / ySpots
 
-
         xpos = mouseX // xgrid
         ypos = mouseY // ygrid
-
 
         return [xpos, ypos]

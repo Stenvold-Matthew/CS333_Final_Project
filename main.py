@@ -6,16 +6,16 @@ import player
 
 def selectDifficulty():
     print("What difficulty would you like to choose?")
-    message = "1. Easy (9x9, 10)| 2. Intermediate (16x16, 40)| "
-    message += "3. Expert (24x24, 99): "
+    message = "1. Easy (9x9, 10)| 2. Intermediate (14x14, 33)| "
+    message += "3. Expert (20x20, 100): "
     difChoice = int(input(message))
     difficultyParameters = [0, 0, 0] #Different Difficult parameters
     if (difChoice == 1):
         difficultyParameters = [9, 9, 10]
     elif (difChoice == 2):
-        difficultyParameters = [16, 16, 40]
+        difficultyParameters = [16, 16, 33]
     elif (difChoice == 3):
-        difficultyParameters = [24, 24, 99]
+        difficultyParameters = [24, 24, 100]
     return difficultyParameters
 
 def decideMove(): #Has the user decide a coordinate to move to
