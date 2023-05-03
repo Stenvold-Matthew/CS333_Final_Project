@@ -36,6 +36,7 @@ def printBoard(inputBoard, filler): # Prints the board, unrevealed spaces are ' 
                 print(filler, end =" | ")
         print("\n" + seperator)
 
+print("Test")
 name = input("What is your name?: ")
 user = player.Player(name)
 parameters = selectDifficulty()
