@@ -1,6 +1,6 @@
 name: Python package
 
-on: [commit]
+on: [push]
 
 jobs:
   build:
