@@ -1,6 +1,8 @@
 name: Python package
 
-on: [push]
+on: 
+  push:
+    braches: [ Final-Release ]
 
 jobs:
   build:
