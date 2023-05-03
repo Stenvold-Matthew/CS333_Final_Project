@@ -1,0 +1,10 @@
+README.md
+pyproject.toml
+src/__init__.py
+src/board.py
+src/main.py
+src/player.py
+src/CS333_Final_Project_Matthew_Stenvold.egg-info/PKG-INFO
+src/CS333_Final_Project_Matthew_Stenvold.egg-info/SOURCES.txt
+src/CS333_Final_Project_Matthew_Stenvold.egg-info/dependency_links.txt
+src/CS333_Final_Project_Matthew_Stenvold.egg-info/top_level.txt
