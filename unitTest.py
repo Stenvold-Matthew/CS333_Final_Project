@@ -1,7 +1,7 @@
 import unittest
 import time
-from src import board
-from src import player
+import src.board as board
+import src.player as player
 
 class TestBoardObjectForSucessfulCreation(unittest.TestCase):
     def test_createBoard(self):
