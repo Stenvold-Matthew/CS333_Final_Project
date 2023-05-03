@@ -45,29 +45,29 @@ def main():
     startingPos = decideMove()
 
     playingBoard.createBoard(startingPos[0], startingPos[1])
-    numSpacesCleared = 0
 
     stillPlaying = True
     while(stillPlaying):
         printBoard(playingBoard, ' ')
         pos = decideMove()
         result = playingBoard.makeMove(pos[0], pos[1])
-        if (result == 1):
+        if (result == 1): # If spot is a mine
             stillPlaying = False
             print("Game Over")
             playingBoard.revealBoard()
-        elif (result == -1):
+        elif (result == -1): # If an illegal move
             print("That is not a legal move")
         else:
             adjMines = str(playingBoard.spots[pos[0]][pos[1]]-2)
             print("The number of adjacent mines is " + adjMines)
-            numSpacesCleared += 1
         if(playingBoard.checkWin()):
             print("Congrats, you've won")
             stillPlaying = False
 
+    # Prints the board with * instead of ' '
     printBoard(playingBoard, '*')
     totalTime = user.getTotalTime()
+    # Print the score of the player (time and spots uncovered)
     print(user.name + " got " + str(playingBoard.spotsRevealed), end=" ")
     print("cleared in " + str(round(totalTime, 4)) + " seconds")
 

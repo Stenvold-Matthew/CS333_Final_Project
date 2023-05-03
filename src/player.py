@@ -16,8 +16,9 @@ class Player:
         return positions
 
     def convMouseCoors(self, mouseX, mouseY, xSpots, ySpots):
-        area = 600#playable area is 600x600
-        xgrid = area / xSpots
+        area = 600 #playable area is 600x600
+        # If using a mouse, determine how frequently the spots should change
+        xgrid = area / xSpots 
         ygrid = area / ySpots
 
         xpos = mouseX // xgrid
