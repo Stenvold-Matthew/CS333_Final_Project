@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "CS333_Final_Project-Matthew-Stenvold"
 version = "0.0.1"
 authors = [
-  { name="Matthew Stenvold", email="stenvoldm@nevada.unr.edu" },
+  { name="Matthew_Stenvold", email="mstenvold@nevada.unr.edu" },
 ]
 description = "A game of minesweeper played through the terminal"
 readme = "README.md"
