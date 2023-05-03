@@ -1,6 +1,6 @@
 How to Run Automated Testing/Building:
 
-Both the testing and the buuilding are done automatically when there is a push to the repository. The test results can be found on the github page under the actions workflow tab, as can the results for the build. The build is hosted on PyPi, under the tag ___. I will update it to work in the morning.
+All of the fully up-to-date code can be found on the "Final-Release" branch. Both the testing and the buuilding are done automatically when there is a push to the repository. The test results can be found on the github page under the actions workflow tab, as can the results for the build. The build is hosted on PyPi, under the tag ___. I will update it to work in the morning.
 
 Project Description
 
