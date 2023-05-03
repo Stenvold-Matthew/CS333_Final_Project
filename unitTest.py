@@ -1,7 +1,7 @@
 import unittest
-import board
 import time
-import player
+from src import board
+from src import player
 
 class TestBoardObjectForSucessfulCreation(unittest.TestCase):
     def test_createBoard(self):
@@ -51,11 +51,11 @@ class TestBoardObjectForSucessfulCreation(unittest.TestCase):
         object = board.Board(2, 2, 2)
         object.spots[0][0] = 1
         object.spots[0][1] = 1
-        #Returns false when there are uncleared safe spots
+        # Returns false when there are uncleared safe spots
         self.assertFalse(object.checkWin()) 
         object.makeMove(1,1)
         object.makeMove(1,0)
-        #Returns true when there are no uncleared safe spots
+        # Returns true when there are no uncleared safe spots
         self.assertTrue(object.checkWin())
 
 class TestPlayerObjectForSucessfulCreation(unittest.TestCase):
